@@ -18,7 +18,7 @@ executarQualquerCoisa(3)
 executarQualquerCoisa(bomDia)
 executarQualquerCoisa(boaTarde)
 
-// Retornar uma função  partir de uma outra função
+// Retornar uma função a partir de uma outra função
 
 function potencia(base, exp) {
     return function(exp) {
