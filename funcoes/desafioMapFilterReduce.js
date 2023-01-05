@@ -11,3 +11,26 @@ const carrinho = [
 // 1. fragil: true
 // 2. qtde * preco -> total
 // 3. medias totais
+
+
+const fragil = item => item.fragil
+const getTotal = item => item.qtde * item.preco
+const getMedia = (acc, el) => {
+        const novaQtde = acc.qtde + 1
+        const novoTotal = acc.total + el
+        return {
+            qtde: novaQtde,
+            total: novoTotal,
+            media: novoTotal / novaQtde
+        }     
+    }
+    
+    const mediaInicial = { qtde: 0, total: 0, media: 0}
+
+    const media = carrinho
+        .filter(fragil)
+        .map(getTotal)
+        .reduce(getMedia, mediaInicial)
+        .media
+
+console.log(`A media é ${media}!`)
